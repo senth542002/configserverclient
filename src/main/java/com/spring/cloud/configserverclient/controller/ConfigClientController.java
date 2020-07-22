@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigClientController {
 	
-	@Value("${user.role}")
+	@Value("${role.name}")
 	private String role;
 	
 	@GetMapping("/whoami/{username}")
