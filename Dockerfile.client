@@ -1,0 +1,11 @@
+FROM openjdk:8-jdk-alpine
+MAINTAINER Senthilkumar
+RUN apk --no-cache add netcat-openbsd
+
+COPY build/libs/configserverclientdocker.jar /opt/spring-cloud/lib/
+
+ENTRYPOINT ["/usr/bin/java"]
+
+CMD ["-jar", "/opt/spring-cloud/lib/configserverclientdocker.jar"]
+
+EXPOSE 8080
